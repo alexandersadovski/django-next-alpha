@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile-details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile-edit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/show-user.css' %}">
+</head>
+<body>
+    <div id="header-container">
+        {% include 'common/header.html' %}
+    </div>
+    
+    <div id="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <div id="footer-container">
+        {% include 'common/footer.html' %}
+    </div>
+    
+    <script src="{% static 'js/dropdown_menu.js' %}"></script>
+    <script src="{% static 'js/match_popup.js' %}"></script>
+</body>
+</html>

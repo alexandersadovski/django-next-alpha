@@ -1,0 +1,17 @@
+# Python bytecode files
+__pycache__/
+
+# Environment variables file
+.env
+
+# Virtual environment folder
+venv/
+
+# IDE
+.idea/
+
+# Mac OS-specific files
+.DS_Store
+
+# Media files
+media/

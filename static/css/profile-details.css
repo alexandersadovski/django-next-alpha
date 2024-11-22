@@ -1,0 +1,82 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.profile-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.profile-options a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #C13D88;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-options a:hover {
+    background-color: #D85A9D;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #C13D88;
+}
+
+.profile-card {
+    position: relative;
+    background-color: #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    height: 400px;
+}
+
+.profile-card img {
+    width: 100%;
+    height: auto;
+}
+
+.profile-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info span {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.profile-card .checkmark {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+}
+
+.additional-profile-info p {
+    color: #000000;
+    margin: 10px;
+    max-width: 400px;
+}
