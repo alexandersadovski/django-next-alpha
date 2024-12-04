@@ -88,35 +88,37 @@
                     </div>
 
                     <div class="action-buttons">
-                        <form method="post" id="dislike-form">
-                            {% csrf_token %}
-                            <button type="submit" name="dislike" class="circle-button dislike-button">
+                        <div id="dislike-form">
+                            <button type="button" name="dislike" class="circle-button dislike-button">
                                 <img src="{% static 'images/icons/dislike-icon.svg' %}" alt="Dislike">
                             </button>
-                        </form>
+                        </div>
 
-                        <form method="post" id="like-form">
-                            {% csrf_token %}
-                            <button type="submit" name="like" class="circle-button like-button">
+                        <div id="like-form">
+                            <button type="button" name="like" class="circle-button like-button">
                                 <img src="{% static 'images/icons/like-icon.svg' %}" alt="Like">
                             </button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         {% else %}
-            <p class="no-profiles">No more profiles to swipe!</p>
+            <div class="no-profiles">
+                <p>No more profiles to swipe!</p>
+            </div>
         {% endif %}
 
         <!-- Match Modal -->
         <div id="match-modal" class="modal" style="display: none;"
              data-name="{{ match_data.name }}"
-             data-next-url="{% url 'show-user' %}">
+             data-next-url="{% url 'show-user' %}"
+             role="dialog" aria-modal="true" aria-labelledby="match-modal-title">
 
             <div class="modal-content">
-                <h1>It's a Match!</h1>
+                <button id="close-modal" class="close-button" aria-label="Close Modal">&times;</button>
+
+                <h1 id="match-modal-title">It's a Match!</h1>
                 <p>You and <span id="match-name"></span> like each other!</p>
-                <button id="close-modal">Close</button>
             </div>
         </div>
     </div>

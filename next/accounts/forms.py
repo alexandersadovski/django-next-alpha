@@ -11,10 +11,22 @@ class AppUserCreationForm(UserCreationForm):
         model = get_user_model()
         fields = ('email',)
 
-    first_name = forms.CharField(max_length=25, required=True)
-    last_name = forms.CharField(max_length=25, required=True)
-    age = forms.IntegerField(validators=[MinValueValidator(18)], required=True)
-    gender = forms.ChoiceField(choices=GenderChoices.choices, required=True)
+    first_name = forms.CharField(
+        max_length=25,
+        required=True,
+    )
+    last_name = forms.CharField(
+        max_length=25,
+        required=True,
+    )
+    age = forms.IntegerField(
+        validators=[MinValueValidator(18)],
+        required=True,
+    )
+    gender = forms.ChoiceField(
+        choices=GenderChoices.choices,
+        required=True,
+    )
 
     def save(self, commit=True):
         user = super().save(commit=False)

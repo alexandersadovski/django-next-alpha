@@ -1,9 +1,11 @@
-from django.contrib.auth import login, logout, get_user_model
+from django.contrib import messages
+from django.contrib.auth import get_user_model, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import LoginView
-from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.views import LoginView, PasswordChangeView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DetailView, UpdateView, View
-from django.urls import reverse_lazy
 from next.accounts.forms import AppUserCreationForm, ProfileEditForm
 from next.accounts.models import Profile
 
@@ -12,7 +14,9 @@ class AppUserRegisterView(CreateView):
     model = get_user_model()
     form_class = AppUserCreationForm
     template_name = 'accounts/register.html'
-    success_url = reverse_lazy('profile-details')
+
+    def get_success_url(self):
+        return reverse('profile-details', kwargs={'pk': self.object.pk})
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -22,6 +26,10 @@ class AppUserRegisterView(CreateView):
 
 class AppUserLoginView(LoginView):
     template_name = 'accounts/login.html'
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'Invalid email or password')
+        return super().form_invalid(form)
 
 
 class ProfileDetailsView(DetailView):
@@ -54,3 +62,9 @@ class ProfileDeleteView(LoginRequiredMixin, View):
         logout(request)
         user.delete()
         return redirect(self.success_url)
+
+
+class AppUserPasswordChangeView(SuccessMessageMixin, PasswordChangeView):
+    template_name = 'accounts/password-change.html'
+    success_message = 'Your password has been successfully changed!'
+    success_url = reverse_lazy('password-change')

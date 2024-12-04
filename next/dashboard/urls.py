@@ -4,6 +4,6 @@ from next.dashboard import views
 urlpatterns = [
     path('', views.show_user, name='show-user'),
     path('matches/', include('next.matches.urls')),
-    path('messaging/', include('next.messaging.urls')),
+    path('', include('next.messaging.urls')),
     path('reports/', include('next.reports.urls')),
 ]

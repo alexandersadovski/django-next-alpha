@@ -7,6 +7,7 @@
             <div class="dashboard-options">
                 <a href="{% url 'profile-details' request.user.pk %}">Details</a>
                 <a href="{% url 'profile-edit' request.user.pk %}">Edit</a>
+                <a href="{% url 'password-change' %}">Change Password</a>
                 <a href="{% url 'profile-delete' request.user.pk %}">Delete</a>
             </div>
         </div>

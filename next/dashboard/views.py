@@ -11,10 +11,13 @@ def show_user(request):
     user_profile = Profile.objects.get(user=user)
 
     seen_profiles = UserInteraction.objects.filter(user=user).values_list('target_user_id', flat=True)
-    next_profile = (Profile.objects.exclude(user=user)
-                    .exclude(user__id__in=seen_profiles)
-                    .exclude(gender=user_profile.gender)
-                    .first())
+    next_profile = (
+        Profile.objects
+        .exclude(user=user)
+        .exclude(user__id__in=seen_profiles)
+        .exclude(gender=user_profile.gender)
+        .order_by('?')
+        .first())
 
     if request.method == 'POST':
         liked = 'like' in request.POST

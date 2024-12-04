@@ -6,10 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/profile-details.css' %}">
-    <link rel="stylesheet" href="{% static 'css/profile-edit.css' %}">
-    <link rel="stylesheet" href="{% static 'css/show-user.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
 </head>
 <body>
     <div id="header-container">
@@ -25,7 +23,6 @@
         {% include 'common/footer.html' %}
     </div>
     
-    <script src="{% static 'js/dropdown_menu.js' %}"></script>
-    <script src="{% static 'js/match_popup.js' %}"></script>
+    <script type="module" src="{% static 'js/base.js' %}"></script>
 </body>
 </html>
