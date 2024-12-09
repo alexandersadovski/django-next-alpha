@@ -8,3 +8,9 @@ class ReasonChoices(models.TextChoices):
     INAPPROPRIATE_CONTENT = 'Inappropriate Content', 'Inappropriate Content'
     OFFENSIVE_LANGUAGE = 'Offensive Language', 'Offensive Language'
     OTHER = 'Other', 'Other'
+
+
+class StatusChoices(models.TextChoices):
+    PENDING = 'Pending', 'Pending'
+    RESOLVED = 'Resolved', 'Resolved'
+    DISMISSED = 'Dismissed', 'Dismissed'

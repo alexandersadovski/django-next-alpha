@@ -99,9 +99,11 @@ form {
 }
 
 .field-value {
-    box-sizing: border-box;
+    color: #333;
+    display: flex;
+    flex-direction: column;
     font-size: 1rem;
-    width: 100%;
+    gap: 8px;
 }
 
 .field-value input,
@@ -256,4 +258,56 @@ form {
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
     color: #721c24;
+}
+
+.field-value a {
+    color: #007bff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.field-value a:hover {
+    text-decoration: underline;
+}
+
+.field-value strong {
+    color: #333;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.field-value input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.field-value label[for*="-clear"] {
+    color: #333;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.field-value input[type="file"] {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    max-width: 100%;
+    padding: 5px;
+}
+
+.field-value input[type="file"]:hover {
+    background: #eee;
+}
+
+.field-value br {
+    display: none;
+}
+
+textarea[name="bio"] {
+    height: 120px;
+    resize: none;
 }

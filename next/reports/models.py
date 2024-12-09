@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from next.reports.choices import ReasonChoices
+from next.reports.choices import ReasonChoices, StatusChoices
 
 
 class Report(models.Model):
@@ -23,4 +23,15 @@ class Report(models.Model):
     )
     status = models.CharField(
         max_length=25,
+        choices=StatusChoices.choices,
+        default=StatusChoices.PENDING,
     )
+
+    def __str__(self):
+        return (
+            f"Report by {self.reported_by.email} "  # type: ignore
+            f"against {self.reported_user.email} "  # type: ignore
+            f"for {self.get_reason_display().lower()} "
+            f"on {self.created_at.strftime('%Y-%m-%d %H:%M:%S')} "
+            f"- Status: {self.get_status_display()}"
+        )

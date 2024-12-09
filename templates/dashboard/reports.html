@@ -21,7 +21,7 @@
                             <td class="user-info">
                                 <div class="profile">
                                     {% if report.reported_user.profile.profile_picture %}
-                                        <img src="{{ report.reported_user.profile.profile_picture }}"
+                                        <img src="{{ report.reported_user.profile.profile_picture.url }}"
                                              alt="Profile Picture" class="profile-pic">
                                     {% else %}
                                         <img src="{% static 'images/icons/profile-icon.svg' %}" alt="Default Profile"

@@ -15,6 +15,8 @@ def show_user(request):
         Profile.objects
         .exclude(user=user)
         .exclude(user__id__in=seen_profiles)
+        .exclude(user__is_superuser=True)
+        .exclude(user__is_staff=True)
         .exclude(gender=user_profile.gender)
         .order_by('?')
         .first())

@@ -14,7 +14,7 @@
                             <div class="chat">
                                 <div class="chat-photo">
                                     {% if data.receiver.profile.profile_picture %}
-                                        <img src="{{ data.receiver.profile.profile_picture }}" alt="Chat Photo">
+                                        <img src="{{ data.receiver.profile.profile_picture.url }}" alt="Chat Photo">
                                     {% else %}
                                         <span>{{ data.receiver.profile.first_name|slice:1|upper }}</span>
                                         <span>{{ data.receiver.profile.last_name|slice:1|upper }}</span>
@@ -41,7 +41,7 @@
                             <div class="chat">
                                 <div class="chat-photo">
                                     {% if chat.user.profile.profile_picture %}
-                                        <img src="{{ chat.user.profile.profile_picture }}" alt="Chat Photo">
+                                        <img src="{{ chat.user.profile.profile_picture.url }}" alt="Chat Photo">
                                     {% else %}
                                         <span>{{ chat.user.profile.first_name|slice:1|upper }}</span>
                                         <span>{{ chat.user.profile.last_name|slice:1|upper }}</span>

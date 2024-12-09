@@ -23,3 +23,6 @@ class Message(models.Model):
     deleted_by_receiver = models.BooleanField(
         default=False,
     )
+
+    def __str__(self):
+        return f"Message from {self.sender.email} to {self.receiver.email}"  # type: ignore

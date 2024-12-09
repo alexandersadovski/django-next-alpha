@@ -29,3 +29,7 @@ class UserInteraction(models.Model):
             target_user=user1,
             liked=True,
         ).exists()
+
+    def __str__(self):
+        status = "Liked" if self.liked else "Not Liked"
+        return f'{self.user.email} -> {self.target_user.email}: {status}'  # type: ignore

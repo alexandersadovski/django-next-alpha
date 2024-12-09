@@ -33,3 +33,6 @@ class Match(models.Model):
                 user1=user1,
                 user2=user2,
             )
+
+    def __str__(self):
+        return f"Match between {self.user1.email} and {self.user2.email}"  # type: ignore

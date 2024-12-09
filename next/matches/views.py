@@ -18,7 +18,6 @@ def list_matches(request):
             report = form.save(commit=False)
             report.reported_by = request.user
             report.reported_user = reported_user
-            report.status = 'pending'
             report.save()
 
             return redirect('matches')

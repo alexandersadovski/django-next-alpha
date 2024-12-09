@@ -14,7 +14,7 @@
                     <div class="profile-picture">
                         {% if match.user1 == request.user %}
                             {% if match.user2.profile.profile_picture %}
-                                <img src="{{ match.user2.profile.profile_picture }}" alt="Profile Picture"
+                                <img src="{{ match.user2.profile.profile_picture.url }}" alt="Profile Picture"
                                      class="match-photo">
                             {% else %}
                                 <img src="{% static 'images/icons/profile-icon.svg' %}" alt="Profile Picture"
@@ -22,7 +22,7 @@
                             {% endif %}
                         {% else %}
                             {% if match.user1.profile.profile_picture %}
-                                <img src="{{ match.user1.profile.profile_picture }}" alt="Profile Picture"
+                                <img src="{{ match.user1.profile.profile_picture.url }}" alt="Profile Picture"
                                      class="match-photo">
                             {% else %}
                                 <img src="{% static 'images/icons/profile-icon.svg' %}" alt="Profile Picture"

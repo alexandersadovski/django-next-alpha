@@ -207,7 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} chatId - The ID of the chat to remove.
      */
     const removeChatFromDOM = (chatId) => {
-        const chatItem = document.querySelector(`.chat-delete[data-chat-id="${chatId}"]`)?.closest('.chat-link');
+        const chatItem = document.querySelector(`.chat-delete[data-chat-id="${chatId}"]`)
+            ?.closest('.chat-link');
         if (chatItem) {
             chatItem.remove();
         }
