@@ -1,3 +1,51 @@
+# Next - A Django-Based Dating App
+
+**Next** is a modern dating application built using Django, designed to provide a smooth and engaging user experience. The app allows users to connect with others through swiping and mutual matches, fostering meaningful conversations.
+
+---
+
+## Key Features
+
+### User Profile Management
+- **Registration**: Users can sign up and create a profile.
+- **Profile Customization**: View, edit, or delete your profile as needed.
+- **Password Management**: Change your password anytime for enhanced security.
+
+### Matchmaking Functionality
+- **Swiping Mechanism**: Users can swipe through profiles to indicate their interest.
+- **Mutual Matches**: When two users like each other, a match is formed, allowing them to connect further.
+- **Chat Integration**: Matched users can initiate and engage in conversations.
+
+### Chat Features
+- **Conversations List**: View all ongoing conversations in one place.
+- **Messaging**: Chat with your matches seamlessly.
+- **Conversation Management**: Option to delete conversations when needed.
+
+### Reporting System
+- **Report User**: Users can report inappropriate behavior or other concerns.
+- **Report Tracking**: View the status of reports, categorized as **Pending**, **Resolved**, or **Dismissed**.
+
+### Admin Panel
+- **Report Review**: A dedicated "report reviewer" role has access to the admin panel to manage user reports effectively.
+- **Status Management**: Update the status of reports to keep users informed.
+
+---
+
+## Technology Stack
+- **Backend**: Django
+- **Frontend**: A mix of HTML, CSS, Django Template Language (DTL), and JavaScript with AJAX for dynamic interactions.
+- **Database**: PostgreSQL
+
+---
+
+## How It Works
+1. Register and create a profile.
+2. Swipe through user profiles to like or pass on them.
+3. When a mutual match occurs, start chatting and get to know each other.
+4. Use the reports feature to flag any concerns and track their resolution.
+
+---
+
 ## **Getting Started**
 
 Follow these steps to get the project up and running on your local machine.
